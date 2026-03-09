@@ -152,6 +152,7 @@ def limpiar_fecha_nacimiento(df, col='fecha_nacimiento'):
 # Función para calcular edad
 def calcular_edad(fecha_nac):
     fecha_actual = datetime(2026, 2, 26)
+    
     if pd.isna(fecha_nac): return None
     edad = fecha_actual.year - fecha_nac.year
     if (fecha_actual.month, fecha_actual.day) < (fecha_nac.month, fecha_nac.day):
