@@ -133,12 +133,12 @@ A continuación se listan los 30 ejercicios. **Debe escribir el valor exacto de 
 | 08 | ¿Cuántas ciudades únicas existen después de normalizar? | `25` |
 | 09 | ¿Cuántos registros tienen la profesión "Ingeniero" después de limpiar? | `12083` |
 | 10 | ¿Cuántos registros tienen la profesión "Programador" después de limpiar? | `12062` |
-| 11 | ¿Cuántas profesiones únicas existen después de normalizar? | `PENDIENTE` |
-| 12 | ¿Cuántos registros tienen el campo `email` con espacios adicionales? | `PENDIENTE` |
-| 13 | ¿Cuántos registros tienen el campo `salario` con caracteres no numéricos? | `PENDIENTE` |
-| 14 | ¿Cuál es el salario promedio después de limpiar? | `PENDIENTE` |
-| 15 | ¿Cuál es el salario máximo después de limpiar? | `PENDIENTE` |
-| 16 | ¿Cuál es el salario mínimo después de limpiar? | `PENDIENTE` |
+| 11 | ¿Cuántas profesiones únicas existen después de normalizar? | `25` |
+| 12 | ¿Cuántos registros tienen el campo `email` con espacios adicionales? | `45447` |
+| 13 | ¿Cuántos registros tienen el campo `salario` con caracteres no numéricos? | `85266` |
+| 14 | ¿Cuál es el salario promedio después de limpiar? | `8,005,689.17` |
+| 15 | ¿Cuál es el salario máximo después de limpiar? | `14,999,995.00` |
+| 16 | ¿Cuál es el salario mínimo después de limpiar? | `1,000,032.00` |
 | 17 | ¿Cuántos registros tienen `activo` como verdadero después de normalizar? | `PENDIENTE` |
 | 18 | ¿Cuántos registros tienen `activo` como falso después de normalizar? | `PENDIENTE` |
 | 19 | ¿Cuántos registros tienen fecha de nacimiento con formato diferente a YYYY-MM-DD? | `PENDIENTE` |

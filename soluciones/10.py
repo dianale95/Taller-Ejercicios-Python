@@ -9,7 +9,7 @@ from helpers import cargar_csv, limpiar_profesion
 
 df = cargar_csv("personas.csv")
 
-# DataFrame con columna ciudad limpia
+# DataFrame con columna profesión limpia
 df_profesion = limpiar_profesion(df)
 
 # Conteo de registros con profesión "Programador"
