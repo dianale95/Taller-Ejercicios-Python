@@ -23,6 +23,8 @@ El repositorio debe contener:
 
 Cada archivo `.py` dentro de la carpeta `soluciones/` debe contener el código que resuelve el ejercicio correspondiente.
 
+Helpers.py es un archivo que sirve para reutilizar funciones en todos los ejercicios
+
 ---
 
 ## Sobre el Dataset
