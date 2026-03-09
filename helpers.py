@@ -111,3 +111,39 @@ def limpiar_salario(df, col='salario'):
     df[col] = pd.to_numeric(df[col], errors='coerce')
     df.loc[df[col] < 0, col] = np.nan
     return df
+
+# Normaliza y limpia valores booleanos en la columna activo
+def limpiar_activo(df, col='activo'):
+    verdaderos = ['true', '1', 'si', 'yes', 's', 'y']
+    falsos = ['false', '0', 'no', 'n']
+
+    def limpiar(valor):
+        if isinstance(valor, str):
+            valor = re.sub(r'[^a-zA-Z0-9]', '', valor)
+            valor = valor.strip().lower()
+            if valor in verdaderos:
+                return True
+            elif valor in falsos:
+                return False
+            return pd.NA
+        return valor
+
+    df[col] = df[col].apply(limpiar)
+    return df
+
+# Normaliza y limpia valores de fecha en la columna fecha_nacimiento
+def limpiar_fecha_nacimiento(df, col='fecha_nacimiento'):
+    def limpiar_fecha_string(valor):
+        if pd.isna(valor):
+            return None
+        texto = str(valor).strip()
+        texto = texto.replace(" ", "")
+        texto = re.sub(r'[./\\]', '-', texto)
+        texto = re.sub(r'[^0-9-]', '', texto)
+        return texto
+
+    if col in df.columns:
+        df[col] = df[col].apply(limpiar_fecha_string)
+        df[col] = pd.to_datetime(df[col], dayfirst=False, errors='coerce')
+
+    return df
