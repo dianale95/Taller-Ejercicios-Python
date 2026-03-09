@@ -1,19 +1,21 @@
-#Cargar datos
-import pandas as pd
-import codecs
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-datos = pd.read_csv('data/personas.csv')
-#----------------------------------------
-#--------Fin cargar datos----------------
+from helpers import cargar_csv, deco_rot13
 
-texto_original = "Juan"
+# Ejercicio 02: 
+# ¿Cuántas veces aparece el nombre "Maria" en el dataset?
 
-#Cifrar ROT13
-texto_cifrado = codecs.encode(texto_original,'rot_13')
+df = cargar_csv("personas.csv")
 
-condicion = datos['nombre_cifrado'] == texto_cifrado
+# Decodificar columna nombre_cifrado
+df["nombre_cifrado"] = df["nombre_cifrado"].apply(lambda x: deco_rot13(x)) 
 
-datos_nuevos =datos[condicion]
+# Nombre a buscar
+name = "Juan" 
 
-print(datos_nuevos.shape[0])
-print(datos_nuevos)
+# Conteo de campo nombre_cifrado igual a name
+count_name = (df["nombre_cifrado"]==name).sum() 
+
+print(f"El nombre '{name}' aparece {count_name} veces en el dataset")
