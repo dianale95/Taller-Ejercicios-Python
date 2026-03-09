@@ -4,6 +4,7 @@ import numpy as np
 import re
 import unicodedata
 from thefuzz import process, fuzz
+from datetime import datetime
 
 # Función para cargar archivo csv y retorna como un DataFrame
 
@@ -147,3 +148,12 @@ def limpiar_fecha_nacimiento(df, col='fecha_nacimiento'):
         df[col] = pd.to_datetime(df[col], dayfirst=False, errors='coerce')
 
     return df
+
+# Función para calcular edad
+def calcular_edad(fecha_nac):
+    fecha_actual = datetime(2026, 2, 26)
+    if pd.isna(fecha_nac): return None
+    edad = fecha_actual.year - fecha_nac.year
+    if (fecha_actual.month, fecha_actual.day) < (fecha_nac.month, fecha_nac.day):
+        edad -= 1
+    return edad
